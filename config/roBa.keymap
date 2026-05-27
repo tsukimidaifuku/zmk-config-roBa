@@ -77,7 +77,7 @@
         rclk_shift_to_5: rclk_shift_to_5 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mkp MB2>, <&to 6>;
+            bindings = <&mkp MB2>, <&to 5>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -86,6 +86,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&to 1>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -93,31 +94,31 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LALT>, <&to 0>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer_mac {
+        default_mac {
             bindings = <
-&kp Q      &kp W           &kp E    &kp R           &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S           &kp D    &kp F           &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
-&kp Z      &kp X           &kp C    &kp V           &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_1  &lt 3 LANG5  &lt 4 HOME         &lt 5 END         &lt 7 SPACE                             &kp ESCAPE
+&kp Q         &kp W           &kp E    &kp R             &kp T                                                    &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A         &kp S           &kp D    &kp F             &kp G        &kp LG(LS(NUMBER_4))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
+&kp Z         &kp X           &kp C    &kp V             &kp B        &mkp MB1                  &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
+&kp LEFT_GUI  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_1  &lt 2 LANG5  &lt 3 HOME                &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
 
-        layer_7 {
+        default_win {
             bindings = <
-&kp Q      &kp W           &kp E    &kp R           &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S           &kp D    &kp F           &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
-&kp Z      &kp X           &kp C    &kp V           &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_0  &lt 3 LANG5  &lt 4 HOME         &lt 5 END         &lt 7 SPACE                             &kp ESCAPE
+&kp Q      &kp W           &kp E    &kp R             &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A      &kp S           &kp D    &kp F             &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
+&kp Z      &kp X           &kp C    &kp V             &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
+&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_0  &lt 3 LANG5  &lt 4 HOME         &lt 0 END         &lt 6 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -125,10 +126,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                       &trans  &trans              &kp LG(SPACE)     &trans         &trans
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &trans      &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT)  &trans
+&kp F11  &kp F12  &trans  &trans  &trans   &trans      &trans  &trans  &trans              &trans            &trans         &trans
+&trans   &trans   &trans  &trans  &trans   &trans      &trans  &trans                                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -154,15 +155,6 @@
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
-        };
-
-        MOUSE {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
-            >;
         };
 
         SCROLL {
