@@ -81,6 +81,21 @@
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        lalt_shift_to_1: lalt_shift_to_1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&to 1>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        lalt_shift_to_0: lalt_shift_to_0 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&to 0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     };
 
     keymap {
@@ -91,7 +106,7 @@
 &kp Q      &kp W           &kp E    &kp R           &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A      &kp S           &kp D    &kp F           &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
 &kp Z      &kp X           &kp C    &kp V           &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lt 2 LEFT_ALT  &lt 3 LANG5  &lt 4 HOME         &lt 5 END         &lt 7 SPACE                             &kp ESCAPE
+&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_1  &lt 3 LANG5  &lt 4 HOME         &lt 5 END         &lt 7 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
@@ -102,7 +117,7 @@
 &kp Q      &kp W           &kp E    &kp R           &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A      &kp S           &kp D    &kp F           &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
 &kp Z      &kp X           &kp C    &kp V           &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lt 2 LEFT_ALT  &lt 3 LANG5  &lt 4 HOME         &lt 5 END         &lt 7 SPACE                             &kp ESCAPE
+&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_0  &lt 3 LANG5  &lt 4 HOME         &lt 5 END         &lt 7 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
