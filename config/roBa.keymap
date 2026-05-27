@@ -8,16 +8,9 @@
     quick-tap-ms = <0>;
 };
 
-&lt {
-    flavor = "balanced";
-    quick-tap-ms = <150>;
-    tapping-term-ms = <150>;
-};
-
 &trackball {
     // automouse-layer = <4>;
     // scroll-layers = <5>;
-
     // arrows {
     //     layers = <3>;
     //     bindings =
@@ -32,34 +25,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
-
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
-        };
-
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -124,7 +90,7 @@
 &kp Q      &kp W           &kp E    &kp R             &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A      &kp S           &kp D    &kp F             &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
 &kp Z      &kp X           &kp C    &kp V             &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_0  &lt 3 LANG5  &lt 4 HOME         &lt 0 END         &lt 6 SPACE                             &kp ESCAPE
+&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_0  &lt 2 LANG5  &lt 3 HOME         &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
