@@ -77,7 +77,7 @@
         rclk_shift_to_5: rclk_shift_to_5 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mkp MB2>, <&to 5>;
+            bindings = <&mkp MB2>, <&to 6>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -86,12 +86,23 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        default_layer_mac {
             bindings = <
 &kp Q      &kp W           &kp E    &kp R           &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A      &kp S           &kp D    &kp F           &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
 &kp Z      &kp X           &kp C    &kp V           &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lt 1 LEFT_ALT  &lt 2 LANG5  &lt 3 HOME         &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
+&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lt 2 LEFT_ALT  &lt 3 LANG5  &lt 4 HOME         &lt 5 END         &lt 7 SPACE                             &kp ESCAPE
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+        };
+
+        layer_7 {
+            bindings = <
+&kp Q      &kp W           &kp E    &kp R           &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A      &kp S           &kp D    &kp F           &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
+&kp Z      &kp X           &kp C    &kp V           &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
+&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lt 2 LEFT_ALT  &lt 3 LANG5  &lt 4 HOME         &lt 5 END         &lt 7 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
