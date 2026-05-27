@@ -110,7 +110,7 @@
 &kp LEFT_GUI  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_1  &lt 2 LANG5  &lt 3 HOME                &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>;
         };
 
         default_win {
@@ -121,7 +121,7 @@
 &kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_0  &lt 3 LANG5  &lt 4 HOME         &lt 0 END         &lt 6 SPACE                             &kp ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
 
         FUNCTION {
