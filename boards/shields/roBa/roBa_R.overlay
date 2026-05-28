@@ -22,6 +22,11 @@
 
         // ボールを動かしたら800ms間AML有効化
         input-processors = <&zip_temp_layer 5 800>;
+
+        // Layer 3 が有効な間だけ、トラックボール速度を半分にする
+        slow_mouse {
+            layers = <3>;
+            input-processors = <&zip_xy_scaler 1 2>;
     };
 };
 
