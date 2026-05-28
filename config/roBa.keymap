@@ -55,6 +55,42 @@
             key-positions = <31 32>;
             layers = <0 1>;
         };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <6 7>;
+            layers = <0 1>;
+        };
+
+        double_quotes {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <18 19>;
+            layers = <0 1>;
+        };
+
+        single_quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <30 31>;
+            layers = <0 1>;
+        };
+
+        question {
+            bindings = <&kp QUESTION>;
+            key-positions = <12 13>;
+            layers = <0 1>;
+        };
+
+        exclamation {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <24 25>;
+            layers = <0 1>;
+        };
+
+        capslock {
+            bindings = <&kp LS(CLCK)>;
+            key-positions = <10 11>;
+            layers = <0 1>;
+        };
     };
 
     macros {
