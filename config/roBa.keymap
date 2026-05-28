@@ -37,13 +37,51 @@
             key-positions = <14 15>;
             layers = <1>;
         };
+
+        brackets {
+            bindings = <&brackets>;
+            key-positions = <7 8>;
+            layers = <0 1>;
+        };
+
+        parentheses {
+            bindings = <&parentheses>;
+            key-positions = <20 21>;
+            layers = <0 1>;
+        };
+
+        braces {
+            bindings = <&braces>;
+            key-positions = <31 32>;
+            layers = <0 1>;
+        };
+    };
+
+    macros {
+        brackets: brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
+        };
+
+        parentheses: parentheses {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+        };
+
+        braces: braces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+        };
     };
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
