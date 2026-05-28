@@ -6,6 +6,12 @@
         zmk,physical-layout = &roba_physical_layout;
     };
 
+    roba_threshold_temp_layer: roba_threshold_temp_layer {
+        compatible = "zmk,input-processor-threshold-temp-layer";
+        #input-processor-cells = <2>;
+        movement-threshold = <10>;
+    };
+
     roba_physical_layout: roba_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";

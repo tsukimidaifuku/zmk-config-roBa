@@ -1,4 +1,6 @@
 name: roBa
 build:
+  cmake: .
   settings:
     board_root: .
+    dts_root: .

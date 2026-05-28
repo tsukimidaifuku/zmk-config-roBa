@@ -1,0 +1,15 @@
+# Copyright (c) 2026
+# SPDX-License-Identifier: MIT
+
+description: Input processor for temporarily enabling a layer after thresholded input events
+
+compatible: "zmk,input-processor-threshold-temp-layer"
+
+include: ip_two_param.yaml
+
+properties:
+  movement-threshold:
+    type: int
+    required: false
+    default: 10
+    description: Minimum abs(X) + abs(Y) movement needed to activate the temporary layer
