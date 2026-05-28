@@ -209,6 +209,11 @@ static int threshold_temp_layer_handle_event(const struct device *dev, struct in
 
     data->state.toggle_layer = param1;
 
+    if (!data->state.is_active && zmk_keymap_layer_active(param1)) {
+        k_mutex_unlock(&data->lock);
+        return ZMK_INPUT_PROC_CONTINUE;
+    }
+
     bool should_trigger = is_xy_event(event) ? xy_report_should_trigger(dev, event) : true;
     if (!should_trigger) {
         k_mutex_unlock(&data->lock);
@@ -248,7 +253,7 @@ ZMK_SUBSCRIPTION(processor_threshold_temp_layer, zmk_layer_state_changed);
 #define THRESHOLD_TEMP_LAYER_INST(n)                                                               \
     static struct threshold_temp_layer_data threshold_temp_layer_data_##n = {};                     \
     static const struct threshold_temp_layer_config threshold_temp_layer_config_##n = {             \
-        .movement_threshold = DT_INST_PROP_OR(n, movement_threshold, 10),                           \
+        .movement_threshold = DT_INST_PROP_OR(n, movement_threshold, 5),                            \
     };                                                                                             \
     DEVICE_DT_INST_DEFINE(n, threshold_temp_layer_init, NULL, &threshold_temp_layer_data_##n,       \
                           &threshold_temp_layer_config_##n, POST_KERNEL,                           \

@@ -9,7 +9,7 @@
     roba_threshold_temp_layer: roba_threshold_temp_layer {
         compatible = "zmk,input-processor-threshold-temp-layer";
         #input-processor-cells = <2>;
-        movement-threshold = <10>;
+        movement-threshold = <5>;
     };
 
     roba_physical_layout: roba_physical_layout {
