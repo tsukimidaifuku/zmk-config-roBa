@@ -27,7 +27,27 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        lang_ja {
+            bindings = <&kp LANG2>;
+            key-positions = <16 17>;
+            layers = <0>;
+        };
+
+        lang_en {
+            bindings = <&kp LANGUAGE_1>;
+            key-positions = <14 15>;
+            layers = <0>;
+        };
+
+        lang_win {
+            bindings = <&kp LA(GRAVE)>;
+            key-positions = <14 15>;
+            layers = <1>;
+        };
+    };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -99,7 +119,7 @@
 &kp Q         &kp W           &kp E    &kp R             &kp T                                                    &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A         &kp S           &kp D    &kp F             &kp G        &kp LG(LS(NUMBER_4))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
 &kp Z         &kp X           &kp C    &kp V             &kp B        &mkp MB1                  &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LEFT_GUI  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_1  &lt 2 LANG5  &lt 3 HOME                &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
+&kp LEFT_GUI  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_1  &lt 2 MINUS  &lt 3 HOME                &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -110,7 +130,7 @@
 &kp Q      &kp W           &kp E    &kp R             &kp T                                             &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A      &kp S           &kp D    &kp F             &kp G        &kp LS(LG(S))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
 &kp Z      &kp X           &kp C    &kp V             &kp B        &mkp MB1           &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_0  &lt 2 LANG5  &lt 3 HOME         &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
+&kp LCTRL  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_0  &lt 2 MINUS  &lt 3 HOME         &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_up_down>;
