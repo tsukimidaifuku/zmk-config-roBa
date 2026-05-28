@@ -10,17 +10,11 @@
     quick-tap-ms = <0>;
 };
 
-&trackball {
-     automouse-layer = <5>;
-};
+&trackball { automouse-layer = <5>; };
 
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer 5 500>;
-};
+&mkp_input_listener { input-processors = <&zip_temp_layer 5 500>; };
 
-&msc_input_listener {
-    input-processors = <&zip_temp_layer 5 500>;
-};
+&msc_input_listener { input-processors = <&zip_temp_layer 5 500>; };
 
 / {
     combos {
@@ -112,10 +106,10 @@
 
         default_mac {
             bindings = <
-&kp Q         &kp W           &kp E    &kp R             &kp T                                                    &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A         &kp S           &kp D    &kp F             &kp G        &kp LG(LS(NUMBER_4))      &kp ENTER         &kp H        &kp J  &kp K      &kp L    &kp BACKSPACE
-&kp Z         &kp X           &kp C    &kp V             &kp B        &mkp MB1                  &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
-&kp LEFT_GUI  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_1  &lt 2 MINUS  &lt 3 HOME                &lt 4 END         &lt 6 SPACE                             &kp ESCAPE
+&kp Q         &kp W           &kp E    &kp R             &kp T                                                   &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A         &kp S           &kp D    &kp F             &kp G       &kp LG(LS(NUMBER_4))      &kp BACKSPACE     &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&kp Z         &kp X           &kp C    &kp V             &kp B       &mkp MB1                  &rclk_shift_to_5  &kp N        &kp M  &kp COMMA  &kp DOT  &kp DELETE
+&kp LEFT_GUI  &kp LEFT_SHIFT  &kp TAB  &lalt_shift_to_1  &lt 2 HOME  &lt 3 END                 &lt 4 SPACE       &lt 6 ENTER                             &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
