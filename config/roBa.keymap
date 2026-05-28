@@ -128,10 +128,10 @@
 
         FUNCTION {
             bindings = <
-&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                           &trans  &trans              &kp LG(SPACE)     &trans         &trans
-&kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &kp C_MUTE      &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(UP_ARROW)  &kp LC(RIGHT)  &trans
-&kp F11  &kp F12  &trans  &trans  &trans   &trans          &trans  &trans  &trans              &trans            &trans         &trans
-&trans   &trans   &trans  &trans  &trans   &trans          &trans  &trans                                                       &trans
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                               &kp MINUS  &kp N1  &kp N2  &kp N3  &kp PLUS
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &kp C_MUTE      &trans      &kp SLASH  &kp N4  &kp N5  &kp N6  &kp ASTERISK
+&kp F11  &kp F12  &trans  &trans  &trans   &trans          &kp PERIOD  &kp N0     &kp N7  &kp N8  &kp N9  &kp EQUAL
+&trans   &trans   &trans  &trans  &trans   &trans          &trans      &trans                             &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -161,14 +161,14 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &kp C_AC_FORWARD  &trans          &msc SCRL_UP    &trans           &kp LG(EQUAL)
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F5  &kp C_AC_BACK     &mkp MB1        &msc SCRL_DOWN  &mkp MB2         &kp LC(EQUAL)
-&trans  &trans  &trans  &trans  &trans  &trans      &to 0   &trans            &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &kp LC(MINUS)
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                             &kp LG(MINUS)
+&trans  &trans        &trans         &trans         &trans                      &kp C_AC_FORWARD  &trans          &msc SCRL_UP    &trans           &kp LG(EQUAL)
+&trans  &trans        &kp LG(SPACE)  &trans         &trans  &trans      &kp F5  &kp C_AC_BACK     &mkp MB1        &msc SCRL_DOWN  &mkp MB2         &kp LC(EQUAL)
+&trans  &kp LC(LEFT)  &kp LC(DOWN)   &kp LC(RIGHT)  &trans  &trans      &to 0   &trans            &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &kp LC(MINUS)
+&trans  &trans        &trans         &trans         &trans  &trans      &trans  &trans                                                             &kp LG(MINUS)
             >;
         };
 
-        layer_6 {
+        bluetooth {
             bindings = <
 &trans  &trans         &none   &trans         &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &kp LC(D)      &none   &kp LG(D)      &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
